@@ -1,0 +1,9 @@
+title: "Infancias digitales navegando el Intermar"
+description: "Bitácora de Intermar"
+baseurl: ""
+url: "https://moonfilmsgp.github.io/bitacora26/"
+
+# Configuraciones para Jekyll
+markdown: kramdown
+theme: minima # Opcional, pero ayuda a GitHub a procesar
+exclude: [Gemfile, Gemfile.lock]
