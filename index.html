@@ -107,7 +107,7 @@
         <div class="bubble" style="width:35px; height:35px; left:85%; animation-delay: 3s;"></div>
 
         <header>
-            <h1>Infancias digitales</h1>
+            <h1>Infancias digitales navegando el Intermar</h1>
         </header>
 
         <nav>
@@ -116,11 +116,16 @@
         </nav>
 
         <main id="bitacora" class="content-section active">
-            <div class="entry">
-                <span style="font-size: 12px;">2026-02-08 | Registro #01</span>
-                <img src="https://placehold.co/700x400/7ecce8/002b5c?text=oli_portada.jpg" class="entry-img">
-                <p>> Iniciando la exploración del ecosistema digital. Oli y Eco se sumergen en las profundidades de Glutube.</p>
-            </div>
+        {% for post in site.posts %}
+        <div class="entry">
+        <div class="entry-meta">
+        <span style="font-weight:bold;">{{ post.date | date: "%Y-%m-%d" }}</span> | {{ post.title }}
+        </div>
+        <div class="note-block">
+        {{ post.content }}
+        </div>
+        </div>
+        {% endfor %}
         </main>
 
         <main id="glosario" class="content-section">
@@ -169,6 +174,7 @@
 </body>
 
 </html>
+
 
 
 
