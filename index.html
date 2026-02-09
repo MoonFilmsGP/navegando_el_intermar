@@ -115,7 +115,7 @@
             <div class="nav-link" onclick="showSection('glosario', this)">Glosario</div>
         </nav>
 
-        <main id="bitacora" class="content-section active">
+       <main id="bitacora" class="content-section active">
         {% for post in site.posts %}
         <div class="entry">
         <div class="entry-meta">
@@ -124,6 +124,9 @@
         <div class="note-block">
         {{ post.content }}
         </div>
+        {% if post.image %}
+        <img src="{{ post.image }}" class="entry-img">
+        {% endif %}
         </div>
         {% endfor %}
         </main>
@@ -174,6 +177,7 @@
 </body>
 
 </html>
+
 
 
 
