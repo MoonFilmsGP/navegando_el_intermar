@@ -137,6 +137,20 @@
     </div>
 
     <script>
+        // Generador de burbujas para el Intermar
+            for (let i = 0; i < 15; i++) {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            
+            // Valores aleatorios para que se vean orgánicas
+            const size = Math.random() * 30 + 10 + "px"; // Entre 10px y 40px
+            bubble.style.width = size;
+            bubble.style.height = size;
+            bubble.style.left = Math.random() * 100 + "%"; // Posición horizontal azar
+            bubble.style.animationDelay = Math.random() * 8 + "s"; // Retraso azar
+            
+            document.body.appendChild(bubble);
+            }
         function showSection(sectionId, element) {
             // Ocultar todas las secciones
             document.querySelectorAll('.content-section').forEach(section => {
@@ -155,6 +169,7 @@
 </body>
 
 </html>
+
 
 
 
