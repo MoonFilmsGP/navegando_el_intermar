@@ -1,7 +1,6 @@
----
-layout: null
----
-<!DOCTYPE<!DOCTYPE html>
+
+<!DOCTYPE
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -18,24 +17,21 @@ layout: null
         }
 
         body {
-   
-    background-image: 
-        linear-gradient(rgba(126, 204, 232, 0.6), rgba(0, 91, 150, 0.7)), 
-        url('img/fondo.jpg'),
-        url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3F%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+            background-image: linear-gradient(rgba(126, 204, 232, 0.6), rgba(0, 91, 150, 0.7)), url('img/fondo.jpg'), url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3F%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+            color: var(--pencil-dark);
+            margin: 0;
+            padding: 20px;
+        }
 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-
-    font-family: 'Comic Sans MS', 'Chalkboard SE', sans-serif;
-    color: var(--pencil-dark);
-    margin: 0;
-    padding: 20px;
-}
-
-        .container { max-width: 700px; margin: 0 auto; }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
 
         header {
             text-align: center;
@@ -66,12 +62,23 @@ layout: null
             transition: 0.2s;
         }
 
-        .nav-link:hover { transform: translateY(-3px) rotate(-2deg); }
-        .nav-link.active { background: white; border-style: dashed; }
+            .nav-link:hover {
+                transform: translateY(-3px) rotate(-2deg);
+            }
+
+            .nav-link.active {
+                background: white;
+                border-style: dashed;
+            }
 
         /* --- SECCIONES --- */
-        .content-section { display: none; }
-        .content-section.active { display: block; }
+        .content-section {
+            display: none;
+        }
+
+            .content-section.active {
+                display: block;
+            }
 
         .entry, .glossary-item {
             background: var(--paper-color);
@@ -89,17 +96,37 @@ layout: null
             margin-bottom: 10px;
         }
 
-        .term { font-weight: bold; color: var(--pencil-blue); font-size: 1.2em; display: block; }
+        .term {
+            font-weight: bold;
+            color: var(--pencil-blue);
+            font-size: 1.2em;
+            display: block;
+        }
 
         /* --- BURBUJAS --- */
         .bubble {
-            position: fixed; bottom: -50px; background: rgba(255, 255, 255, 0.2);
-            border-radius: 50%; animation: rise 8s infinite ease-in; z-index: -1;
+            position: fixed;
+            bottom: -50px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: rise 8s infinite ease-in;
+            z-index: -1;
         }
+
         @keyframes rise {
-            0% { transform: translateY(0); opacity: 0; }
-            50% { opacity: 0.4; }
-            100% { transform: translateY(-100vh); opacity: 0; }
+            0% {
+                transform: translateY(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
         }
     </style>
 </head>
@@ -118,20 +145,20 @@ layout: null
             <div class="nav-link" onclick="showSection('glosario', this)">Glosario</div>
         </nav>
 
-       <main id="bitacora" class="content-section active">
-        {% for post in site.posts %}
-        <div class="entry">
-        <div class="entry-meta">
-        <span style="font-weight:bold;">{{ post.date | date: "%Y-%m-%d" }}</span> | {{ post.title }}
-        </div>
-        <div class="note-block">
-        {{ post.content }}
-        </div>
-        {% if post.image %}
-        <img src="{{ post.image }}" class="entry-img">
-        {% endif %}
-        </div>
-        {% endfor %}
+        <main id="bitacora" class="content-section active">
+            {% for post in site.posts %}
+            <div class="entry">
+                <div class="entry-meta">
+                    <span style="font-weight:bold;">{{ post.date | date: "%Y-%m-%d" }}</span> | {{ post.title }}
+                </div>
+                <div class="note-block">
+                    {{ post.content }}
+                </div>
+                {% if post.image %}
+                <img src="{{ post.image }}" class="entry-img">
+                {% endif %}
+            </div>
+            {% endfor %}
         </main>
 
         <main id="glosario" class="content-section">
@@ -145,9 +172,40 @@ layout: null
             </div>
             <div class="glossary-item">
                 <span class="term">Táctica</span>
-                <p>El historiador francés Michel de Certeau propone el concepto de táctica para referirse a las pequeñas acciones cotidianas que encuentran las personas dentro de su día a día para rebelarse ante las estrategias de poder que utilizan las instituciones y las clases dominantes para establecer el orden hegemónico. Para los propósitos de este proyecto nos proponemos entender las tácticas como todas aquellas acciones cotidianas que realizan las infancias dentro del mundo digital, ya sea de manera consciente o inconsciente, y que de alguna manera rompen con la lógica de explotación de atención y vulneración de los derechos infantiles bajo los cuales operan las plataformas digitales. También entenderemos como tácticas aquellas acciones que impliquen el ejercicio de la agencia infantil frente a un sistema que pretende limitarla y controlarla a través de las estrategias a las que se refiere de Certeau. 
+                <p>
+                    El historiador francés Michel de Certeau propone el concepto de táctica para referirse a las pequeñas acciones cotidianas que encuentran las personas dentro de su día a día para rebelarse ante las estrategias de poder que utilizan las instituciones y las clases dominantes para establecer el orden hegemónico. Para los propósitos de este proyecto nos proponemos entender las tácticas como todas aquellas acciones cotidianas que realizan las infancias dentro del mundo digital, ya sea de manera consciente o inconsciente, y que de alguna manera rompen con la lógica de explotación de atención y vulneración de los derechos infantiles bajo los cuales operan las plataformas digitales. También entenderemos como tácticas aquellas acciones que impliquen el ejercicio de la agencia infantil frente a un sistema que pretende limitarla y controlarla a través de las estrategias a las que se refiere de Certeau.
 
- </p>
+                </p>
+            </div>
+            <div class="glossary-item">
+                <span class="term">Estereotipo </span>
+                <p>Los estereotipos retienen unas cuantas características sencillas, vividas, memorables, fácilmente percibidas y ampliamente reconocidas acerca de una persona, reducen todo acerca de una persona a esos rasgos, los exageran y simplifican y los fijan sin cambio o desarrollo hasta la eternidad. Este es el proceso que describimos anteriormente. Por consiguiente, el primer punto es: la estereotipación reduce, esencializa, naturaliza y fija la “diferencia”. </p>
+            </div>
+            <div class="glossary-item">
+                <span class="term">Tipo </span>
+                <p>Los tipos son instancias que indican aquellos que viven de acuerdo con las reglas de la sociedad (tipos sociales) </p>
+            </div>
+            <div class="glossary-item">
+                <span class="term">Mapeo Colectivo </span>
+                <p>El mapeo colectivo es, según lo proponen los Iconoclasistas en su texto “Manual de mapeo” (2015), un proceso de creación que busca desafiar los relatos dominantes sobre los territorios a partir de los saberes y experiencias cotidianas de los participantes. Es una herramienta que amplía las metodologías de investigación</p>
+            </div>  <div class="glossary-item">
+                <span class="term">Agencia Infantil </span>
+                <p>Anthony Giddens y Pierre Bourdieu permiten analizar que la agencia infantil es una capacidad de acción situada; niñas y niños pueden influir y participar activamente en su entorno, pero siempre dentro de estructuras sociales que condicionan y a la vez posibilitan sus prácticas. Así, su acción combina reflexividad y disposiciones socialmente incorporadas. </p>
+            </div>  <div class="glossary-item">
+                <span class="term">Cartografía Crítica </span>
+                <p>Según los Iconoclasistas, es la práctica de usar mapas para cuestionar las narrativas oficiales. Es entender que el mapa no es “la verdad”, sino una herramienta para visibilizar lo que el poder quiere ocultar.  </p>
+            </div>  <div class="glossary-item">
+                <span class="term">Algoritmo </span>
+                <p>Por algoritmo entendemos aquellas series de programas matemáticos incorporados en las plataformas digitales que recompilan, cuantifican y analizan datos y comportamientos pasados de los usuarios y sus redes, para predecir y organizar los resultados mediáticos de manera personalizada. En este sentido, no solo filtran información, sino que producen un ecosistema completo de contenidos, anuncios y recomendaciones hecho a la medida de cada usuario. </p>
+            </div>  <div class="glossary-item">
+                <span class="term">Playthings (Objetos de juego) </span>
+                <p>
+                    Partiendo de las ideas propuestas por Johan Huizinga en Homo Ludens (1938), Miguel Sicart propone el concepto de playthings, u objetos de juego a falta de una mejor traducción al español, surge para dar cuenta de que el ser humano no requiere de objetos diseñados específicamente para jugar para hacer uso de las cosas de manera lúdica. Este concepto permite explicar el proceso del juego, lo que pasa con las cosas cuando y mientras se juega con ellas, y sus relaciones positivas y negativas con los cuerpos.
+
+                    En su libro Playing Software: Homo Ludens in Computational Culture (2023), Sicart propone que el software también puede transformarse en un objeto de juego a la vez que propone que este objeto posee una agencia que a través del juego negocia con la agencia del usuario.
+
+                    Este concepto resulta muy interesante para nuestro proyecto pues nos permite pensar en el espacio digital como objetos que las personas, y sobre todo para nuestro proyecto, las infancias, pueden emplear para el juego.
+                </p>
             </div>
         </main>
 
@@ -155,19 +213,19 @@ layout: null
 
     <script>
         // Generador de burbujas para el Intermar
-            for (let i = 0; i < 15; i++) {
+        for (let i = 0; i < 15; i++) {
             const bubble = document.createElement('div');
             bubble.className = 'bubble';
-            
+
             // Valores aleatorios para que se vean orgánicas
             const size = Math.random() * 30 + 10 + "px"; // Entre 10px y 40px
             bubble.style.width = size;
             bubble.style.height = size;
             bubble.style.left = Math.random() * 100 + "%"; // Posición horizontal azar
             bubble.style.animationDelay = Math.random() * 8 + "s"; // Retraso azar
-            
+
             document.body.appendChild(bubble);
-            }
+        }
         function showSection(sectionId, element) {
             // Ocultar todas las secciones
             document.querySelectorAll('.content-section').forEach(section => {
@@ -177,7 +235,7 @@ layout: null
             document.querySelectorAll('.nav-link').forEach(link => {
                 link.classList.remove('active');
             });
-            
+
             // Mostrar la seleccionada
             document.getElementById(sectionId).classList.add('active');
             element.classList.add('active');
@@ -186,14 +244,3 @@ layout: null
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
